@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {Box,Text,Image ,HStack, Input ,Pressable , FlatList} from 'native-base'
-
+import Header from '../Components/Header'
+import Footer from "../Components/Footer"
 
 const Home = () => {
 const Otel = [
@@ -21,15 +22,7 @@ const Otel = [
     return(
 
 <Box p="10">
-    <Box name="header" mt="5">
-        <HStack justifyContent={'space-between'} alignItems={'center'}>
-        <Image alt='pp' source={require('../img/profile.jpg')} w="43.5" h="43.5" rounded={'50'}/>
-        <Text >Hello , Niara ! </Text>
-        <Box bgColor={'#fff'} w="38.72" h="38.72" rounded={'50'} shadow="2" justifyContent={'center'} alignItems={'center'}>
-        <Image alt="noti" source={require('../img/notif.png')} w="14.32" h="17.26" />
-        </Box>
-        </HStack>
-    </Box>
+    <Header />
     <Box my="3">
         <Text fontWeight={'bold'} fontSize={'20'}>Find Your Stay</Text>
         <HStack justifyContent={'space-around'} alignItems={'center'}>
@@ -74,6 +67,29 @@ const Otel = [
     </Box>
 
       )} />
+    </Box>
+   
+    <Box py="10" >
+        <HStack justifyContent={'space-between'} >
+            <Text fontWeight={'bold'} fontSize={'20'} >Popular</Text>
+            <Pressable>
+                <Text color={'#F05A22'}>View All</Text>
+            </Pressable>
+        </HStack>
+
+      <FlatList horizontal data={Otel} keyExtractor={(item) => item.id} renderItem={({item})=>(
+    <Box w="200" h="100" rounded={'30'} bgColor={"#fff"} mr="3">
+        <HStack>
+        <Image source={item.image} w="110" h="60" alt="otel" mt="3"/>
+        <Text fontWeight={'bold'} ml="5" fontSize={'10'} w="20" pt="5">{item.name}</Text>
+        </HStack>
+    </Box>
+
+      )} />
+    </Box>
+
+    <Box>
+        <Footer />
     </Box>
 </Box>
     )
