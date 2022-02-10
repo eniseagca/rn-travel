@@ -18,7 +18,7 @@ Discover a Hotel & Resort to  Book a Suitable Room
 </Text>
     </Box>
     <Box mt="50">
-<Button bgColor={'#F05A22'} w="200" h="10" alignItems={'center'} rounded={'10'} _text={{ fontSize:'20'}} onPress={()=>navigation.navigate('home')}>
+<Button bgColor={'#F05A22'} w="200" h="10" alignItems={'center'} rounded={'10'} _text={{ fontSize:'20'}} onPress={()=>navigation.navigate('login')}>
 Get Started
 </Button>
     </Box>

@@ -11,14 +11,18 @@ const Otel = [
     "id" : 1,
     "name" : "Misty Rock Resort",
     "location" :"Wayanad",
-    "image" : require('../img/otel1.png')
+    "image" : require('../img/otel1.png'),
+    "price":"420",
+    "desc":"Style never met and those among great. At no or september sportsmen he perfectly happiness attending. Depending listening delivered off new she procuring satisfied sex existence. Person plenty answer to exeter it if. Law use assistance especially resolution cultivated did out sentiments unsatiable. Way necessary had intention happiness but september delighted his curiosity. Furniture furnished or on strangers neglected remainder engrossed. "
 
     },
     {
         "id":"2",
         "name":"Hilton",
         "location": "Turkey",
-        "image": require('../img/otel2.png')
+        "image": require('../img/otel2.png'),
+        "price":"450",
+        "desc":"An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. "
     }
 ]
     return(
@@ -86,8 +90,8 @@ const Otel = [
       <FlatList horizontal data={Otel} keyExtractor={(item) => item.id} renderItem={({item})=>(
     <Box w="200" h="100" rounded={'30'} bgColor={"#fff"} mr="3">
         <HStack>
-        <Image source={item.image} w="110" h="60" alt="otel" mt="3"/>
-        <Text fontWeight={'bold'} ml="5" fontSize={'10'} w="20" pt="5">{item.name}</Text>
+        <Image source={item.image} w="110" h="60" alt="otel" mt="5" ml="2"/>
+        <Text fontWeight={'bold'} ml="2" fontSize={'10'} w="20" pt="5" mt="2">{item.name}</Text>
         </HStack>
     </Box>
 
