@@ -23,13 +23,48 @@ const Otel = [
         "image": require('../img/otel2.png'),
         "price":"450",
         "desc":"An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. "
+    },
+    {
+        "id":"3",
+        "name":"Alaçatı",
+        "location": "Turkey",
+        "image": require('../img/otel3.jpg'),
+        "price":"300",
+        "desc":"An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. "
+    },
+    {
+        "id":"4",
+        "name":"Grannos",
+        "location": "England",
+        "image": require('../img/otel4.jpg'),
+        "price":"500",
+        "desc":"An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. "
+    },
+    {
+        "id":"5",
+        "name":"Miracle Resort Otel",
+        "location": "Germany",
+        "image": require('../img/otel5.jpg'),
+        "price":"350",
+        "desc":"An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. "
+    },
+    {
+        "id":"6",
+        "name":"Rox Hotel",
+        "location": "Turkey",
+        "image": require('../img/otel6.jpeg'),
+        "price":"550",
+        "desc":"An so vulgar to on points wanted. Not rapturous resolving continued household northward gay. He it otherwise supported instantly. Unfeeling agreeable suffering it on smallness newspaper be. So come must time no as. Do on unpleasing possession as of unreserved. Yet joy exquisite put sometimes enjoyment perpetual now. Behind lovers eat having length horses vanity say had its. "
     }
 ]
     return(
 
-<Box p="10">
+<Box p="10" flex={1}>
     <Header navigation={navigation} />
-    <Box my="3">
+    <Box flex={.8}>
+
+   
+    <Box my="3" >
         <Text fontWeight={'bold'} fontSize={'20'}>Find Your Stay</Text>
         <HStack justifyContent={'space-around'} alignItems={'center'}>
            <Input placeholder="Search here..." w="270" h="35" borderRadius={'md'} bgColor={'#fff'} onChangeText={(text)=> setDeger(text)}
@@ -63,15 +98,15 @@ const Otel = [
     <Box py="3">
         <HStack justifyContent={'space-between'} pb="3">
             <Text fontWeight={'bold'} fontSize={'20'} >Our Properties</Text>
-            <Pressable>
+            <Pressable onPress={()=>navigation.navigate('properties',{Otel})}>
                 <Text color={'#F05A22'}>View All</Text>
             </Pressable>
         </HStack>
    
-      <FlatList horizontal data={Otel} keyExtractor={(item) => item.id} renderItem={({item})=>(
+      <FlatList showsHorizontalScrollIndicator="false" horizontal data={Otel} keyExtractor={(item) => item.id} renderItem={({item})=>(
            <Pressable onPress={()=>navigation.navigate('detail',{item})}>
     <Box w="255" h="200" rounded={'30'} bgColor={"#fff"} mr="3">
-        <Image source={item.image} w="272" h="160" alt="otel" mt="3"/>
+        <Image source={item.image} w="272" h="160" alt="otel" mt="3" borderRadius={'20'} />
         <Text fontWeight={'bold'} ml="5" >{item.name}</Text>
     </Box>
     </Pressable>
@@ -87,7 +122,7 @@ const Otel = [
             </Pressable>
         </HStack>
 
-      <FlatList horizontal data={Otel} keyExtractor={(item) => item.id} renderItem={({item})=>(
+      <FlatList showsHorizontalScrollIndicator="false" horizontal data={Otel} keyExtractor={(item) => item.id} renderItem={({item})=>(
     <Box w="200" h="100" rounded={'30'} bgColor={"#fff"} mr="3">
         <HStack>
         <Image source={item.image} w="110" h="60" alt="otel" mt="5" ml="2"/>
@@ -97,9 +132,9 @@ const Otel = [
 
       )} />
     </Box>
-
-    <Box mt="5">
-        <Footer/>
+    </Box>
+    <Box justifyContent={'flex-end'} flex={.2}>
+        <Footer navigation={navigation}/>
     </Box>
 </Box>
     )

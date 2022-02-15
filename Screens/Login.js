@@ -1,5 +1,5 @@
 import React from "react";
-import {Box,Input,Text,FormControl,Heading,VStack,Button ,HStack ,Link} from 'native-base'
+import {Box,Input,Text,FormControl,Button ,HStack ,Link} from 'native-base'
 
 const Login = (props) => {
 const {navigation } = props

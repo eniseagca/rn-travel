@@ -8,7 +8,8 @@ import List from './Screens/List'
 import Search from './Screens/Search'
 import Detail from './Screens/Detail'
 import Login from './Screens/Login';
-
+import Favorite from './Screens/Favorite';
+import Properties from './Screens/Properties';
 
 const Stack = createNativeStackNavigator()
 
@@ -25,6 +26,8 @@ const App = () => {
           <Stack.Screen name="search" component={Search} />
           <Stack.Screen name="detail" component={Detail} />
           <Stack.Screen name="login" component={Login} />
+          <Stack.Screen name="favorite" component={Favorite} />
+          <Stack.Screen name="properties" component={Properties} />
         </Stack.Navigator>
         </NavigationContainer>
     </NativeBaseProvider>

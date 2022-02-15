@@ -9,11 +9,15 @@ const Detail = (params) => {
     return (
         <Box p="10" flex={1}>
             <Header navigation={navigation} />
-            <Box pt="5">
-                <Box justifyContent={'space-around'} rounded={'30'} bgColor={"#fff"} mr="3">
-                    <Image source={route.params.item.image} w="272" h="160" alt="otel" mt="3" />
-                    <Text fontWeight={'bold'} ml="4" mt="10" >{route.params.item.name}</Text>
-                    <Text ml="4">{route.params.item.desc}</Text>
+            <Box pt="5" flex=".8">
+                <Box justifyContent={'space-around'} rounded={'30'} bgColor={"#fff"} >
+                   <Box alignItems={'center'}>
+                   <Image source={route.params.item.image} w="272" h="160" alt="otel" mt="5" />
+                   </Box>
+                    
+
+                    <Text fontWeight={'bold'} mx="4" mt="10" >{route.params.item.name}</Text>
+                    <Text mx="4" mt="7">{route.params.item.desc}</Text>
             
                 <HStack my="50" justifyContent={'center'}>
                     <Text fontSize={'24'}>
@@ -26,7 +30,7 @@ const Detail = (params) => {
                
             </Box>
             </Box>
-            <Box h="70" justifyContent={'flex-end'}>
+            <Box h="70" justifyContent={'flex-end'} flex=".2">
             <Footer/>
             </Box>
            
