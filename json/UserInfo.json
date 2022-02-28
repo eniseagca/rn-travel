@@ -1,0 +1,19 @@
+ {
+   "userInfo": {
+    
+    "name":"",
+    "surname":"",
+    "gender":"",
+    "age":""
+},
+"userAdress": { 
+    "city":"",
+    "district":"",
+    "apartment" :"",
+    "country":""
+},
+"active":{
+    "active":false
+}
+
+}
